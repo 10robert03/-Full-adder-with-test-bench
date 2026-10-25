@@ -12,6 +12,8 @@ module tb_adder4;
     integer i;
     integer errors = 0;
     initial begin
+        $dumpfile("adder4.vcd");
+        $dumpvars(0, tb_adder4);
         for(i = 0; i < 512; i = i +1) begin // 512 because 2⁴ * 2⁴ * 2 for [3:0]a and b and 1 bit for cin
             {a, b, cin} = i;
             expected = a + b + cin;
