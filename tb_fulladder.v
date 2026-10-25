@@ -10,6 +10,8 @@ module tb_fulladder;
     integer i;
     integer errors = 0;
     initial begin
+        $dumpfile("fulladder.vcd");
+        $dumpvars(0, tb_fulladder);
         for(i = 0; i < 8; i = i + 1) begin
             {a, b, cin} = i;
             expected = a + b + cin;
